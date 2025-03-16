@@ -4,61 +4,57 @@ This application fetches random facts or the most recent science articles from p
 ## Setup Instructions
 
 ### 1. Clone the Repository
-bash  
-git clone <REPOSITORY_URL>  
-cd <REPOSITORY_DIRECTORY>  
+~~~~bash
+git clone <REPOSITORY_URL>
+cd <REPOSITORY_DIRECTORY>
+~~~~
 
-2. (Optional) Create a Virtual Environment  
+### 2. (Optional) Create a Virtual Environment
 It's recommended to use a virtual environment:
+~~~~bash
+python -m venv venv
+# On Windows:
+venv\Scripts\activate
+# On macOS/Linux:
+source venv/bin/activate
+~~~~
 
-bash  
-Copy  
-python -m venv venv  
-# On Windows:  
-venv\Scripts\activate  
-# On macOS/Linux:  
-source venv/bin/activate  
-
-3. Install Dependencies  
+### 3. Install Dependencies
 Install the required packages using pip:
-
-bash  
-Copy  
-pip install -r requirements.txt  
+~~~~bash
+pip install -r requirements.txt
+~~~~
 
 If you don't have a requirements.txt, create one with the following content:
+~~~~nginx
+requests
+python-dotenv
+~~~~
 
-nginx  
-Copy  
-requests  
-python-dotenv  
-
-4. Configure Environment Variables  
+### 4. Configure Environment Variables
 Create a .env file in the project root directory and add your sender email and Google app password:
-
-env  
-Copy  
-SENDER_EMAIL=your_email@example.com  
-SENDER_PASSWORD=your_google_app_password  
+~~~~env
+SENDER_EMAIL=your_email@example.com
+SENDER_PASSWORD=your_google_app_password
+~~~~
 
 Note: To obtain your Google app password, enable 2-Step Verification on your Google account and generate an app password. See Google's App Password Help for detailed instructions.
 
-How to Run the App  
+## How to Run the App
 Run the application by providing the receiver email and a keyword to select the API:
+~~~~bash
+python script.py receiver_email [facts|articles]
+~~~~
 
-bash  
-Copy  
-python script.py receiver_email [facts|articles]  
+Replace `receiver_email` with the recipient's email address.  
+Use `facts` to fetch random facts or `articles` to fetch recent science articles.
 
-Replace receiver_email with the recipient's email address.  
-Use facts to fetch random facts or articles to fetch recent science articles.
+### Example
+~~~~bash
+python script.py recipient@example.com facts
+~~~~
 
-Example  
-bash  
-Copy  
-python script.py recipient@example.com facts  
-
-License  
+## License
 This project is licensed under the MIT License.
 
 Copy
