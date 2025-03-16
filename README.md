@@ -53,8 +53,3 @@ Use `facts` to fetch random facts or `articles` to fetch recent science articles
 ~~~~bash
 python script.py recipient@example.com facts
 ~~~~
-
-## License
-This project is licensed under the MIT License.
-
-Copy
